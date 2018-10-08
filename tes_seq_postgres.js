@@ -16,7 +16,16 @@ var Kasir = seq.define('kasir', {
     kota: {type: sequelize.STRING}    
 })
 
-// create table
+// create/connect to table
 Kasir.sync({force: false}).then(() => {
     console.log('Tabel sukses dibuat!')
+})
+
+// insert data
+Kasir.create({
+    nama: 'Andi',
+    usia: 24,
+    kota: 'Jakarta',
+}).then(() => {
+    console.log('Data sukses dikirim!')
 })
