@@ -56,4 +56,27 @@ router.post('/kasir', (req, res)=>{
     })
 })
 
+// route PUT update specific data
+router.put('/kasir/:id', (req,res)=>{
+    Kasir.update({
+        nama: req.body.nama,
+        usia: req.body.usia,
+        kota: req.body.kota
+        },
+        {where: {id: req.params.id}}
+    ).then(() => {
+        console.log('Data sukses terupdate!')
+        res.send('Data sukses terupdate!')
+    })
+})
+
+router.delete('/kasir/:id', (req,res)=>{
+    Kasir.destroy(
+        {where: {id: req.params.id}}
+    ).then(() => {
+        console.log('Data sukses terhapus!')
+        res.send('Data sukses terhapus!')
+    })
+})
+
 module.exports = router
