@@ -22,10 +22,17 @@ Kasir.sync({force: false}).then(() => {
 })
 
 // insert data
-Kasir.create({
-    nama: 'Andi',
-    usia: 24,
-    kota: 'Jakarta',
-}).then(() => {
-    console.log('Data sukses dikirim!')
+// Kasir.create({
+//     nama: 'Budi',
+//     usia: 25,
+//     kota: 'Bandung',
+// }).then(() => {
+//     console.log('Data sukses dikirim!')
+// })
+
+// get all data
+Kasir.findAll().then((dataku) => {
+    console.log(dataku.map((konten, index) => {
+        return konten.dataValues
+    }))
 })
