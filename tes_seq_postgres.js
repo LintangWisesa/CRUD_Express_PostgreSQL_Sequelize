@@ -32,9 +32,10 @@ Kasir.create({
 
 // get all data
 Kasir.findAll().then((dataku) => {
-    console.log(dataku.map((konten, index) => {
+    var allData = dataku.map((konten, index) => {
         return konten.dataValues
-    }))
+    })
+    console.log(allData)
 })
 
 // get data by id
