@@ -43,6 +43,21 @@ Kasir.sync({force: false}).then(() => {
 // })
 
 // get data by a specific attribute (misal: nama)
-Kasir.findOne({where: {nama:'Andi'}}).then((dataku) => {
-    console.log(dataku.dataValues)
+// Kasir.findOne({where: {nama:'Andi'}}).then((dataku) => {
+//     console.log(dataku.dataValues)
+// })
+
+// update sebuah data
+// Kasir.update(
+//     {nama: 'Ali'},
+//     {where: {id: 1}}
+// ).then(() => {
+//     console.log('Data sukses terupdate!')
+// })
+
+// delete sebuah data
+Kasir.destroy(
+    {where: {id: 1}}
+).then(() => {
+    console.log('Data sukses terhapus!')
 })
