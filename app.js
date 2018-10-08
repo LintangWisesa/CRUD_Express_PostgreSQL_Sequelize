@@ -1,8 +1,10 @@
 var express = require('express')
 var cors = require('cors')
+var routeKu = require('./route/route_seq_pgsql')
 
 var app = express()
 app.use(cors())
+app.use(routeKu)
 
 // initial route
 app.get('/', (req, res)=>{
