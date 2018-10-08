@@ -8,3 +8,15 @@ seq.authenticate().then(() => {
 }).catch((error) => {
     console.log(error)
 })
+
+// create model = refleksikan isi tabel
+var Kasir = seq.define('kasir', {
+    nama: {type: sequelize.STRING},
+    usia: {type: sequelize.INTEGER},
+    kota: {type: sequelize.STRING}    
+})
+
+// create table
+Kasir.sync({force: false}).then(() => {
+    console.log('Tabel sukses dibuat!')
+})
