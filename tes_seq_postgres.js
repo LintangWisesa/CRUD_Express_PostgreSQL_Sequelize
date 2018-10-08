@@ -31,8 +31,18 @@ Kasir.sync({force: false}).then(() => {
 // })
 
 // get all data
-Kasir.findAll().then((dataku) => {
-    console.log(dataku.map((konten, index) => {
-        return konten.dataValues
-    }))
+// Kasir.findAll().then((dataku) => {
+//     console.log(dataku.map((konten, index) => {
+//         return konten.dataValues
+//     }))
+// })
+
+// get data by id
+// Kasir.findById(2).then((dataku) => {
+//     console.log(dataku.dataValues)
+// })
+
+// get data by a specific attribute (misal: nama)
+Kasir.findOne({where: {nama:'Andi'}}).then((dataku) => {
+    console.log(dataku.dataValues)
 })
